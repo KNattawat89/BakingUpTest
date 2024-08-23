@@ -1,0 +1,19 @@
+services:
+  app:
+    image: golang
+    container_name: go_backend
+    working_dir: /bakingUp/backend
+    ports:
+      - "8000:8000"
+    command: go run main.go
+    depends_on:
+      - db
+  db:
+    image: postgres
+    container_name: bakingUpDB
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: batmim-3dotHe-bymsok
+    ports:
+      - "80:5432"
