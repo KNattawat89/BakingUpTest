@@ -11,5 +11,6 @@ FROM ubuntu:22.04
 
 WORKDIR /app
 COPY --from=builder /go/src/app/app /app
+COPY .env /app/.env
 
 CMD ["./app"]
