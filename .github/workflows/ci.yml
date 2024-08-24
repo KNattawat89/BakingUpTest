@@ -66,5 +66,5 @@ jobs:
             cd bakingUp
             docker pull ${{ secrets.DOCKER_USERNAME }}/bakingup-backend:latest
             docker-compose up --detach 
-            docker cp .env bakingup-backend:/app/.env
+            docker system prune -af
   
