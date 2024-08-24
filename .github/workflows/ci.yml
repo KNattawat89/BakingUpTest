@@ -62,5 +62,6 @@ jobs:
           script: |
             cd bakingUp
             docker pull ${{ secrets.DOCKER_USERNAME }}/bakingup-backend:latest
+            echo '${{secrets.BACKEND_PRODUCTION_ENV}}' > .env
             docker-compose up --detach 
   
