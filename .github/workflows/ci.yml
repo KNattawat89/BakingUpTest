@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.PRODUCTION_SSH_USERNAME }}
           password: ${{ secrets.PRODUCTION_SSH_PASSWORD }}
           script: |
-            cd bakingUp/backend
+            cd bakingUp
             docker pull ${{ secrets.DOCKER_USERNAME }}/bakingup-backend:latest
             docker-compose up --detach 
   
