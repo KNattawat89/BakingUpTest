@@ -1,4 +1,4 @@
-name: Check Backend
+name: Build Check Backend
 
 on:
   pull_request:
@@ -30,5 +30,4 @@ jobs:
       - name: Compile Backend
         run: |
           cd ./cmd/http
-          echo '${{secrets.BACKEND_PRODUCTION_ENV}}' > .env
-          go run main.go
+          go build main.go
