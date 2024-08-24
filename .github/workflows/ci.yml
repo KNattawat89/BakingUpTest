@@ -64,4 +64,5 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/bakingup-backend:latest
             echo '${{secrets.BACKEND_PRODUCTION_ENV}}' > .env
             docker-compose up --detach 
+            docker cp .env bakingup-backend:/app/.env
   
