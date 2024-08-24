@@ -7,7 +7,7 @@ COPY . .
 RUN go build -o app cmd/http/main.go
 
 # Stage 2: Run the application
-FROM debian:bullseye-slim
+FROM ubuntu:22.04
 
 WORKDIR /app
 COPY --from=builder /go/src/app/app /app
